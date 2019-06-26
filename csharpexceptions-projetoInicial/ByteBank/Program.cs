@@ -22,11 +22,15 @@ namespace ByteBank
 
 
         private static void TestaDivisao(int divisor)
-
-        
-
         {
-            int resultado = Dividir(10, divisor);
+            try
+            {
+                int resultado = Dividir(10, divisor);
+            }               
+            catch(DivideByZeroException)
+            {
+                Console.WriteLine("Não é possivel dividir por 0");
+            }
 
             Console.WriteLine("Resultado da divisão de 10 por " + divisor + " é " + resultado);
         }

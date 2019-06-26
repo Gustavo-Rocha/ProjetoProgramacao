@@ -20,7 +20,7 @@ namespace ByteBank
             TestaDivisao(2);
         }
 
-        private static void TestaDivisao(int divisor);;;;;;;;;;;;;;;;;;
+        private static void TestaDivisao(int divisor)
         {
             int resultado = Dividir(10, divisor);
 

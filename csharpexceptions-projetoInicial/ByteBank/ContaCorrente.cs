@@ -18,7 +18,7 @@ namespace ByteBank
             {
                 return _agencia;
             }
-            set
+            private set
             {
                 if (value <= 0)
                 {
@@ -28,7 +28,16 @@ namespace ByteBank
                 _agencia = value;
             }
         }
-        public int Numero { get; set; }
+
+        private readonly int _numero;
+        public int Numero {
+            get
+            {
+                return _numero;
+            }
+                
+                
+                }
 
         private double _saldo = 100;
 
@@ -53,7 +62,7 @@ namespace ByteBank
         public ContaCorrente(int agencia, int numero)
         {
             Agencia = agencia;
-            Numero = numero;
+            _numero = numero;
 
             TaxaOperacao = 30 / TotalDeContasCriadas;
 
@@ -63,6 +72,7 @@ namespace ByteBank
 
         public bool Sacar(double valor)
         {
+            
             if (_saldo < valor)
             {
                 return false;

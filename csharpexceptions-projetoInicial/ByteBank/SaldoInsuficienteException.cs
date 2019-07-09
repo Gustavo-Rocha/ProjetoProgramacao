@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ByteBank
 {
-    //public class SaldoInsuficienteException : OperacaoFinanceiraException
+    public class SaldoInsuficienteException : OperacaoFinanceiraException
     {
 
         public double Saldo { get; }

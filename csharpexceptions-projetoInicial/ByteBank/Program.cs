@@ -10,20 +10,47 @@ namespace ByteBank
     {
         static void Main(string[] args)
         {
-                ContaCorrente contaCorrente = new ContaCorrente(0, 0);
-                Metodo();
-                
-            
+
            
-            
+
+            try
+            {
+                ContaCorrente contaCorrente = new ContaCorrente(10, 12345);
+                ContaCorrente conta2 = new ContaCorrente(456, 78945);
+
+                conta2.Transferir(-456, contaCorrente);
+
+
+                contaCorrente.Depositar(50);
+                Console.WriteLine(contaCorrente.Saldo);
+                contaCorrente.Sacar(-500);
+            }
+
+            catch(ArgumentException e)
+            {
+                if(e.ParamName=="numero")
+                {
+
+                }
+
+                
+                Console.WriteLine("argumento com problema: "+e.ParamName);
+                Console.WriteLine("Ocorreu uma exceção do tipo ArgumentException");
+                Console.WriteLine(e.Message);
+                
+            }
+
+            catch(SaldoInsuficienteException e)
+            {
+                Console.WriteLine(e.Message);
+                Console.WriteLine("Exceção do tipo SaldoInsuficienteException");
+            }
+
+            catch(Exception e)
+            {
               //  Console.WriteLine(erro.StackTrace);
-               // Console.WriteLine("Aconteceu um erro de divisão por 0");
-            
-            
-            
-               // Console.WriteLine(e.Message);
-               // Console.WriteLine(e.StackTrace);
-               // Console.WriteLine("Aconteceu um erro");
+                Console.WriteLine(e.Message);
+            }
             
 
             

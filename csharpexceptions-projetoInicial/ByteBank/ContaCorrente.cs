@@ -2,6 +2,7 @@
 
 using System;
 
+
 namespace ByteBank
 {
     public class ContaCorrente
@@ -10,7 +11,7 @@ namespace ByteBank
 
         public static double TaxaOperacao { get; private set; }
 
-        public static int TotalDeContasCriadas { get; private set; } 
+        public static int TotalDeContasCriadas { get; private set; }
 
 
         private int _agencia;
@@ -63,32 +64,44 @@ namespace ByteBank
 
         public ContaCorrente(int agencia, int numero)
         {
-            if(agencia <=0 || numero <=0)
+
+            if (agencia <= 0)
             {
-                Console.WriteLine(Titular.Nome);
+                throw new ArgumentException("O argumento agencia deve ser maior que 0.", nameof(agencia));
             }
-            
+
+            if (numero <= 0)
+            {
+                throw new ArgumentException("O argumento numero deve ser maior que 0.", nameof(numero));
+            }
+
+
             Agencia = agencia;
             _numero = numero;
 
-            TaxaOperacao = 30 / TotalDeContasCriadas;
-
             TotalDeContasCriadas++;
+            TaxaOperacao = 30 / TotalDeContasCriadas;
 
            
         }
-        
 
-        public bool Sacar(double valor)
+
+        public void Sacar(double valor)
         {
             
+            if (valor < 0)
+            {
+                throw new ArgumentException("valor invalido para  sacar", nameof(valor));
+            }
+
+
             if (_saldo < valor)
             {
-                return false;
+                throw new SaldoInsuficienteException(Saldo,valor );
             }
 
             _saldo -= valor;
-            return true;
+            
         }
 
         public void Depositar(double valor)
@@ -97,16 +110,18 @@ namespace ByteBank
         }
 
 
-        public bool Transferir(double valor, ContaCorrente contaDestino)
+        public void Transferir(double valor, ContaCorrente contaDestino)
         {
-            if (_saldo < valor)
+
+            if (valor < 0)
             {
-                return false;
+                throw new ArgumentException("valor invalido para  a transferencia", nameof(valor));
             }
 
-            _saldo -= valor;
+            Sacar(valor);
+          
             contaDestino.Depositar(valor);
-            return true;
+           
         }
     }
 }

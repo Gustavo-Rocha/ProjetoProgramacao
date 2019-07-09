@@ -98,10 +98,10 @@ namespace ByteBank
 
 
            
-        }
+        
         
 
-        public Sacar(double valor)
+        public void Sacar(double valor)
         {
             
             if (valor < 0)

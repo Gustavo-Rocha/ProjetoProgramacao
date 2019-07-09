@@ -1,5 +1,7 @@
 ﻿// using _05_ByteBank;
 
+using System;
+
 namespace ByteBank
 {
     public class ContaCorrente
@@ -8,7 +10,7 @@ namespace ByteBank
 
         public static double TaxaOperacao { get; private set; }
 
-        public static int TotalDeContasCriadas { get; private set; }
+        public static int TotalDeContasCriadas { get; private set; } 
 
 
         private int _agencia;
@@ -61,14 +63,21 @@ namespace ByteBank
 
         public ContaCorrente(int agencia, int numero)
         {
+            if(agencia <=0 || numero <=0)
+            {
+                Console.WriteLine(Titular.Nome);
+            }
+            
             Agencia = agencia;
             _numero = numero;
 
             TaxaOperacao = 30 / TotalDeContasCriadas;
 
             TotalDeContasCriadas++;
-        }
 
+           
+        }
+        
 
         public bool Sacar(double valor)
         {

@@ -10,21 +10,21 @@ namespace ByteBank
     {
         static void Main(string[] args)
         {
-            try
-            {
+                ContaCorrente contaCorrente = new ContaCorrente(0, 0);
                 Metodo();
-            }
-            catch(DivideByZeroException e)
-            {
+                
+            
+           
+            
               //  Console.WriteLine(erro.StackTrace);
-                Console.WriteLine("Aconteceu um erro de divisão por 0");
-            }
-            catch(Exception e)
-            {
-                Console.WriteLine(e.Message);
-                Console.WriteLine(e.StackTrace);
-                Console.WriteLine("Aconteceu um erro");
-            }
+               // Console.WriteLine("Aconteceu um erro de divisão por 0");
+            
+            
+            
+               // Console.WriteLine(e.Message);
+               // Console.WriteLine(e.StackTrace);
+               // Console.WriteLine("Aconteceu um erro");
+            
 
             
             Console.ReadLine();

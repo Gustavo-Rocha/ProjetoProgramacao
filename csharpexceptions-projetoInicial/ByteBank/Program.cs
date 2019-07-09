@@ -10,51 +10,28 @@ namespace ByteBank
     {
         static void Main(string[] args)
         {
-
-           
-
             try
             {
-                ContaCorrente contaCorrente = new ContaCorrente(10, 12345);
-                ContaCorrente conta2 = new ContaCorrente(456, 78945);
+                ContaCorrente conta1 = new ContaCorrente(4564, 789684);
+                ContaCorrente conta2 = new ContaCorrente(7891, 456794);
 
-                conta2.Transferir(-456, contaCorrente);
-
-
-                contaCorrente.Depositar(50);
-                Console.WriteLine(contaCorrente.Saldo);
-                contaCorrente.Sacar(-500);
+                conta1.Sacar(10000);
             }
-
-            catch(ArgumentException e)
-            {
-                if(e.ParamName=="numero")
-                {
-
-                }
-
-                
-                Console.WriteLine("argumento com problema: "+e.ParamName);
-                Console.WriteLine("Ocorreu uma exceção do tipo ArgumentException");
-                Console.WriteLine(e.Message);
-                
-            }
-
-            catch(SaldoInsuficienteException e)
+            catch (OperacaoFinanceiraException e)
             {
                 Console.WriteLine(e.Message);
-                Console.WriteLine("Exceção do tipo SaldoInsuficienteException");
-            }
+                Console.WriteLine(e.StackTrace);
 
-            catch(Exception e)
-            {
-              //  Console.WriteLine(erro.StackTrace);
-                Console.WriteLine(e.Message);
-            }
-            
+                //Console.WriteLine("informações da Inner Exception(exceção interna): ");
+                //Console.WriteLine(e.InnerException.Message);
+                // Console.WriteLine(e.InnerException.StackTrace);
 
-            
+            }
+            Console.WriteLine("Execução finalizada. Tecle enter para sair");
             Console.ReadLine();
+
+        
+        Console.ReadLine();
         }
         //Teste com a cadeia de chamada:
         //Metodo -> TestaDivisao -> Dividir

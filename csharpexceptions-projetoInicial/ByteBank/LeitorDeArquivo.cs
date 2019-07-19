@@ -7,19 +7,20 @@ using System.Threading.Tasks;
 
 namespace ByteBank
 {
-    public class LeitorDeArquivo
+    public class LeitorDeArquivo : IDisposable
     {
         public string Arquivo { get; }
 
         public LeitorDeArquivo(string arquivo)
         {
             Arquivo = arquivo;
-            int divisor = 0;
-            int res = 10 / divisor;
+             
 
-            throw new FileNotFoundException();
+            //throw new FileNotFoundException();
             Console.WriteLine("Abrindo arquivo: " + arquivo);
         }
+
+
 
         public string LerProximaLinha()
         {
@@ -29,9 +30,10 @@ namespace ByteBank
             return "Linha do arquivo";
         }
 
-        public void Fechar()
+        public void Dispose()
         {
             Console.WriteLine("Fechando arquivo.");
         }
+
     }
 }

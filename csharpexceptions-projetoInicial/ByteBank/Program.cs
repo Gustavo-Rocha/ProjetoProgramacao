@@ -30,31 +30,37 @@ namespace ByteBank
 
         private static void CarregarContas()
         {
-            LeitorDeArquivo leitor = null;
-            try
+            using (LeitorDeArquivo leitor = new LeitorDeArquivo("Teste.txt"))
             {
-                leitor = new LeitorDeArquivo("contasl.txt");
+                leitor.LerProximaLinha();
+            }
 
-                leitor.LerProximaLinha();
-                leitor.LerProximaLinha();
-                leitor.LerProximaLinha();
+
+
+            //-------------------------------------------------------------------
+
+
+            //LeitorDeArquivo leitor = null;
+            //try
+            //{
+            //    leitor = new LeitorDeArquivo("contasl.txt");
+
+            //    leitor.LerProximaLinha();
+            //    leitor.LerProximaLinha();
+            //    leitor.LerProximaLinha();
 
                 
-            }
-            catch(IOException)
-            {
-                Console.WriteLine("Exceção do tipo IO capturada e tratada");
-               
-            }
-            finally
-            {
-                Console.WriteLine("Executando o finnaly");
+            //}
+            
+            //finally
+            //{
+            //    Console.WriteLine("Executando o finnaly");
 
-                if(leitor !=null)
-                {
-                    leitor.Fechar();
-                }
-            }
+            //    if(leitor !=null)
+            //    {
+            //        leitor.Fechar();
+            //    }
+            //}
 
         }
 

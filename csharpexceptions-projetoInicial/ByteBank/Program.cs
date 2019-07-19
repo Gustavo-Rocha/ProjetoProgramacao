@@ -51,8 +51,8 @@ namespace ByteBank
                 Console.WriteLine("Executando o finnaly");
 
                 if(leitor !=null)
-                { 
-                    leitor.Fechar()
+                {
+                    leitor.Fechar();
                 }
             }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,55 @@ namespace ByteBank
     class Program
     {
         static void Main(string[] args)
+        {
+            try
+            {
+                CarregarContas();
+            }
+            catch(Exception)
+            {
+                Console.WriteLine("Catch no metodo main");
+            }
+            
+
+            Console.WriteLine("Execução finalizada. Tecle enter para sair");
+            Console.ReadLine();
+
+        
+        
+        }
+
+        private static void CarregarContas()
+        {
+            LeitorDeArquivo leitor = null;
+            try
+            {
+                leitor = new LeitorDeArquivo("contasl.txt");
+
+                leitor.LerProximaLinha();
+                leitor.LerProximaLinha();
+                leitor.LerProximaLinha();
+
+                
+            }
+            catch(IOException)
+            {
+                Console.WriteLine("Exceção do tipo IO capturada e tratada");
+               
+            }
+            finally
+            {
+                Console.WriteLine("Executando o finnaly");
+
+                if(leitor !=null)
+                { 
+                    leitor.Fechar()
+                }
+            }
+
+        }
+
+        private static void TestaInnerException()
         {
             try
             {
@@ -27,12 +77,9 @@ namespace ByteBank
                 // Console.WriteLine(e.InnerException.StackTrace);
 
             }
-            Console.WriteLine("Execução finalizada. Tecle enter para sair");
-            Console.ReadLine();
-
-        
-        Console.ReadLine();
         }
+
+
         //Teste com a cadeia de chamada:
         //Metodo -> TestaDivisao -> Dividir
         private static void Metodo()

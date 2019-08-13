@@ -4,22 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ByteBank.Modelos;
-using ByteBank.Modelos.Funcionarios;
 
-namespace ByteBank.SistemaAgencia
+
+namespace ByteBank.SistemaInterno
 {
     class Program
     {
         static void Main(string[] args)
         {
-            ContaCorrente conta = new ContaCorrente(456, 456879);
 
-            Modelos.Funcionarios.Funcionario funcionario = null;
+            ContaCorrente conta = new ContaCorrente(234,56787);
 
-            Console.WriteLine(conta.Numero);
+            Console.WriteLine(conta.Saldo);
 
             Console.ReadLine();
-
 
         }
     }

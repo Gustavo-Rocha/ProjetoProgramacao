@@ -12,12 +12,24 @@ namespace ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
-            
+
+            string URLTeste = "http://www.bytebank.com/cambio";
+            int indiceByteBank = URLTeste.IndexOf("http://www.bytebank.com");
+            Console.WriteLine(indiceByteBank>=0 );
+
+            Console.WriteLine(URLTeste.StartsWith("http://www.bytebank.com"));
+            Console.WriteLine(URLTeste.EndsWith("cambio/"));
+            Console.WriteLine(URLTeste.Contains("bytebank"));
+            Console.ReadLine();
+
+
+
+
 
 
             string urlParametros = "http://www.bytebanck.com/cambio?moedaOrigem=real&moedaDestino=dolar&valor=1500";
             ExtratorValorDeArgumentosURL extratorValor = new ExtratorValorDeArgumentosURL(urlParametros);
-            string valor= extratorValor.GetValor("moedaOrigem");
+            string valor = extratorValor.GetValor("moedaOrigem");
 
             Console.WriteLine("valor de moeda Origem " + valor);
 
@@ -25,10 +37,36 @@ namespace ByteBank.SistemaAgencia
 
             Console.WriteLine("valor de moeda Destino " + valorDestino);
 
-            Console.WriteLine(extratorValor.GetValor("valor"));
+            Console.WriteLine(extratorValor.GetValor("VALOR"));
 
 
             Console.ReadLine();
+
+
+
+            //testando toLower/toUPPER
+            string mensagemOrigem = "PALAVRA";
+            string termoBusca = "ra";
+
+            Console.WriteLine(termoBusca.ToUpper());
+
+
+            //trestando replace
+
+            termoBusca = termoBusca.Replace('r', 'R');
+            Console.WriteLine(termoBusca);
+
+           termoBusca = termoBusca.Replace('a', 'A');
+
+            Console.WriteLine(termoBusca) ;
+
+            Console.WriteLine(mensagemOrigem.IndexOf(termoBusca));
+            Console.ReadLine();
+
+
+
+
+           
 
             //testando o metodo remove 
             string testeRemocao = "PrimeiraParte&123456";

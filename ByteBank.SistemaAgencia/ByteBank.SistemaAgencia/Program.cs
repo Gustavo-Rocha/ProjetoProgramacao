@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using ByteBank.Modelos;
 using ByteBank.Modelos.Funcionarios;
@@ -12,10 +13,52 @@ namespace ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Olá, mundo!");
+            Console.WriteLine(123);
+            Console.WriteLine(10.5);
+            Console.WriteLine(true);
+
+            object conta = new ContaCorrente(456, 687876);
+            object desenvolvedor = new Desenvolvedor("121351");
+
+            string contaToString = conta.ToString();
+
+
+            Console.WriteLine("Resultado" + contaToString);
+            Console.WriteLine(conta);
+
+
+            Console.ReadLine();
+        }
+
+        static void TestaString()
+            {
+            // Olá, meu nome é Guilherme e você pode entrar em contato comigo
+            // através do número 8457-4456!
+
+            // Meu nome é Guilherme, me ligue em 4784-4546
+
+            // string padrao = "[0123456789][0123456789][0123456789][0123456789][-][0123456789][0123456789][0123456789][0123456789]";
+            // string padrao = "[0-9][0-9][0-9][0-9][-][0-9][0-9][0-9][0-9]";
+            // string padrao = "[0-9]{4,5}[-][0-9]{4}";
+            // string padrao = "[0-9]{4,5}[-]{0,1}[0-9]{4}";
+            // string padrao = "[0-9]{4,5}-{0,1}[0-9]{4}";
+            string padrao = "[0-9]{4,5}-?[0-9]{4}";
+            string textoDeTeste = "Meu nome é Guilherme, me ligue em 47844546";
+
+
+            Match resultado = Regex.Match(textoDeTeste, padrao);
+            Console.WriteLine(resultado.Value);
+
+            Console.WriteLine(Regex.IsMatch(textoDeTeste, padrao));
+            Console.ReadLine();
+
+
+
 
             string URLTeste = "http://www.bytebank.com/cambio";
             int indiceByteBank = URLTeste.IndexOf("http://www.bytebank.com");
-            Console.WriteLine(indiceByteBank>=0 );
+            Console.WriteLine(indiceByteBank >= 0);
 
             Console.WriteLine(URLTeste.StartsWith("http://www.bytebank.com"));
             Console.WriteLine(URLTeste.EndsWith("cambio/"));
@@ -56,9 +99,9 @@ namespace ByteBank.SistemaAgencia
             termoBusca = termoBusca.Replace('r', 'R');
             Console.WriteLine(termoBusca);
 
-           termoBusca = termoBusca.Replace('a', 'A');
+            termoBusca = termoBusca.Replace('a', 'A');
 
-            Console.WriteLine(termoBusca) ;
+            Console.WriteLine(termoBusca);
 
             Console.WriteLine(mensagemOrigem.IndexOf(termoBusca));
             Console.ReadLine();
@@ -66,7 +109,7 @@ namespace ByteBank.SistemaAgencia
 
 
 
-           
+
 
             //testando o metodo remove 
             string testeRemocao = "PrimeiraParte&123456";
@@ -107,16 +150,16 @@ namespace ByteBank.SistemaAgencia
 
             string url = "pagina?moedaOrigem=real&moedaDestino=dolar";
 
-           // int indiceInterrogacao = url.IndexOf('?');
+            // int indiceInterrogacao = url.IndexOf('?');
 
-           // Console.WriteLine(indiceInterrogacao);
+            // Console.WriteLine(indiceInterrogacao);
 
             Console.WriteLine(url);
             //string argumentos = url.Substring(indiceInterrogacao);
             Console.WriteLine(string.IsNullOrEmpty(textoVazio));
             Console.ReadLine();
 
-            
+
 
 
         }

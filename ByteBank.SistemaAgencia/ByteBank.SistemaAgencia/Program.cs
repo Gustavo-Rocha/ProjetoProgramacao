@@ -13,7 +13,26 @@ namespace ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
+            //------------------------------- CURSO DE ARRAY ---------------------------------------------------------//
 
+
+            int[] idades = new int[5];
+
+            idades[0] = 15;
+            idades[1] = 28;
+            idades[2] = 35;
+            idades[3] = 50;
+            idades[4] = 28;
+
+
+            Console.WriteLine(idades[4]);
+
+            Console.ReadLine();
+
+
+
+
+            //------------------------------- CURSO DE STRINGS ---------------------------------------------------------//
             Cliente carlos_1 = new Cliente();
             carlos_1.Nome = "Carlos";
             carlos_1.CPF = "458.623.120-03";
@@ -24,7 +43,7 @@ namespace ByteBank.SistemaAgencia
             carlos_2.CPF = "458.623.120-03";
             carlos_2.Profissao = "Designer";
 
-            if (carlos_1.Equals(conta_2))
+            if (carlos_1.Equals(carlos_2))
             {
                 Console.WriteLine("São iguais!");
             }

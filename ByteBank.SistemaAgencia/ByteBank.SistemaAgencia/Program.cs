@@ -15,21 +15,28 @@ namespace ByteBank.SistemaAgencia
         {
             //------------------------------- CURSO DE ARRAY ---------------------------------------------------------//
 
+            ListaDeContaCorrente lista = new ListaDeContaCorrente();
+            lista.MeuMetodo(numero:5);
 
-            int[] idades = new int[5];
+            ContaCorrente contaDoGui = new ContaCorrente(546, 5674976);
+            lista.Adicionar(contaDoGui);
 
-            idades[0] = 15;
-            idades[1] = 28;
-            idades[2] = 35;
-            idades[3] = 50;
-            idades[4] = 28;
+            lista.Remover(contaDoGui);
 
+            lista.adicionar(new ContaCorrente(874, 567945));
+            lista.adicionar(new ContaCorrente(874, 567945));
+            lista.adicionar(new ContaCorrente(874, 567945));
+            lista.adicionar(new ContaCorrente(874, 567945));
+            lista.adicionar(new ContaCorrente(874, 567945));
+            lista.adicionar(new ContaCorrente(874, 567945));
+            lista.adicionar(new ContaCorrente(874, 567945));
+            lista.adicionar(new ContaCorrente(874, 567945));
+            lista.adicionar(new ContaCorrente(874, 567945));
+            lista.adicionar(new ContaCorrente(874, 567945));
+            lista.adicionar(new ContaCorrente(874, 567945));
+            lista.adicionar(new ContaCorrente(874, 567945));
 
-            Console.WriteLine(idades[4]);
-
-            Console.ReadLine();
-
-
+            Console.ReadKey();
 
 
             //------------------------------- CURSO DE STRINGS ---------------------------------------------------------//
@@ -75,6 +82,26 @@ namespace ByteBank.SistemaAgencia
 
 
             Console.ReadLine();
+        }
+
+        static void TestaArrayDeContaCorrente()
+
+        {
+
+
+            ContaCorrente[] contas = new ContaCorrente[3];
+            contas[0] = new ContaCorrente(874, 5679787);
+            contas[1] = new ContaCorrente(874, 4456668);
+            contas[2] = new ContaCorrente(874, 7781438);
+
+            for (int indice = 0; indice < contas.Length; indice++)
+            {
+                ContaCorrente contaAtual = contas[indice];
+                Console.WriteLine($"Conta {indice} {contaAtual.Numero}");
+            }
+
+
+
         }
 
         static void TestaString()
@@ -209,5 +236,40 @@ namespace ByteBank.SistemaAgencia
 
 
         }
+
+
+
+
+
+        static void TestaArrayInt()
+        {
+
+            int[] idades = new int[5];
+
+            idades[0] = 15;
+            idades[1] = 28;
+            idades[2] = 35;
+            idades[3] = 50;
+            idades[4] = 28;
+
+            int acumulador = 0;
+            for (int indice = 0; indice < idades.Length; indice++)
+            {
+                int idade = idades[indice];
+
+                Console.WriteLine($"Acessando o array idades no índice {indice}");
+                Console.WriteLine($"Valor de idades[{indice}] = {idade}");
+
+                acumulador += idade;
+            }
+
+            int media = acumulador / idades.Length;
+            Console.WriteLine($"Média de idades = {media}");
+
+            Console.ReadLine();
+
+
+        }
+
     }
 }

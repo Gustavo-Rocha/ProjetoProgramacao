@@ -11,7 +11,13 @@ namespace ByteBank.SistemaAgencia
     {
         private ContaCorrente[] _itens;
         private int _proximaPosicao;
-
+        public int Tamanho
+        {
+            get
+            {
+                return _proximaPosicao;
+            }
+        }
 
 
 
@@ -30,9 +36,53 @@ namespace ByteBank.SistemaAgencia
         {
             VerificarCapacidade(_proximaPosicao + 1);
 
-            Console.WriteLine($"Adicionando Intem  na proxição {_proximaPosicao}");
+           // Console.WriteLine($"Adicionando Intem  na proxição {_proximaPosicao}");
             _itens[_proximaPosicao] = item;
             _proximaPosicao++;
+        }
+
+
+        public void remover(ContaCorrente item)
+        {
+            int indiceItem = 1;
+            for (int i = 0; i < _proximaPosicao--; i++)
+            {
+
+
+
+
+                ContaCorrente itemAtual = _itens[i];
+
+                if (itemAtual.Equals(item))
+                {
+                    indiceItem = i;
+                }
+                _proximaPosicao--;
+                _itens[_proximaPosicao] = null;
+
+            }
+
+        }
+
+
+        public ContaCorrente GetItemNoIndice(int indice)
+        {
+            if(indice <0|| indice>=_proximaPosicao)
+            {
+                throw new ArgumentOutOfRangeException(nameof(indice));
+            }
+            return _itens[indice];
+
+        }
+
+
+        public void EscreverListaNaTela()
+        {
+            for (int i = 0; i < _proximaPosicao; i++)
+            {
+                ContaCorrente conta = _itens[i];
+                Console.WriteLine($"Conta numero {conta.Agencia} {conta.Numero}");
+            }
         }
 
         private void VerificarCapacidade(int tamanhoNecessario)
@@ -52,17 +102,27 @@ namespace ByteBank.SistemaAgencia
 
             ContaCorrente[] novoArray = new ContaCorrente[novoTamanho];
 
-            Console.WriteLine("Aumentando capacidade da lista!");
+           // Console.WriteLine("Aumentando capacidade da lista!");
 
             for (int indice = 0; indice < _itens.Length; indice++)
             {
                 novoArray[indice] = _itens[indice];
-                Console.WriteLine(".");
+               // Console.WriteLine(".");
             }
 
             _itens = novoArray;
         }
 
+      
+
+        public ContaCorrente  this[int indice]
+        
+        {
+            get
+            {
+                return GetItemNoIndice(indice);
+            }
+        }
 
 
     }

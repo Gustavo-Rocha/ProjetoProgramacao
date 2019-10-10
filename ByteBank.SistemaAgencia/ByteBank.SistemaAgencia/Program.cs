@@ -18,10 +18,10 @@ namespace ByteBank.SistemaAgencia
             ListaDeContaCorrente lista = new ListaDeContaCorrente();
             lista.MeuMetodo(numero:5);
 
-            ContaCorrente contaDoGui = new ContaCorrente(546, 5674976);
-            lista.Adicionar(contaDoGui);
+            ContaCorrente contaDoGui = new ContaCorrente(1111,222222);
+            lista.adicionar(contaDoGui);
 
-            lista.Remover(contaDoGui);
+           
 
             lista.adicionar(new ContaCorrente(874, 567945));
             lista.adicionar(new ContaCorrente(874, 567945));
@@ -35,6 +35,18 @@ namespace ByteBank.SistemaAgencia
             lista.adicionar(new ContaCorrente(874, 567945));
             lista.adicionar(new ContaCorrente(874, 567945));
             lista.adicionar(new ContaCorrente(874, 567945));
+
+            for(int i = 0; i< lista.Tamanho;i++)
+            {
+                
+                ContaCorrente itemAtual = lista[i];
+                Console.WriteLine($"Item na posição {i} = Conta {itemAtual.Numero}/{itemAtual.Agencia}");
+            }
+
+
+            //lista.remover(contaDoGui);
+
+            Console.WriteLine("Apos remover o item");
 
             Console.ReadKey();
 

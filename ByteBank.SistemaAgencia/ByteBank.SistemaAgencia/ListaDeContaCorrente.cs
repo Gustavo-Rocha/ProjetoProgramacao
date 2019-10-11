@@ -48,9 +48,6 @@ namespace ByteBank.SistemaAgencia
             for (int i = 0; i < _proximaPosicao--; i++)
             {
 
-
-
-
                 ContaCorrente itemAtual = _itens[i];
 
                 if (itemAtual.Equals(item))
@@ -63,6 +60,16 @@ namespace ByteBank.SistemaAgencia
             }
 
         }
+
+
+        public void AdicionarVarios(params ContaCorrente[] itens)
+        {
+            foreach(ContaCorrente conta in itens)
+            {
+                adicionar(conta);
+            }
+        }
+
 
 
         public ContaCorrente GetItemNoIndice(int indice)

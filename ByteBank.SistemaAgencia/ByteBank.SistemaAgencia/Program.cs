@@ -15,7 +15,24 @@ namespace ByteBank.SistemaAgencia
         {
             //------------------------------- CURSO DE ARRAY ---------------------------------------------------------//
 
-           Console.WriteLine( SomarVarios(1, 3, 45, 76, 98, 097, 45, 43543, 342));
+
+
+
+            ListaDeObject listaDeIdades = new ListaDeObject();
+            listaDeIdades.adicionar(60);
+            listaDeIdades.adicionar(60);
+            listaDeIdades.adicionar(60);
+            listaDeIdades.AdicionarVarios(4, 98, 65);
+            listaDeIdades.adicionar(60);
+
+            for(int i=0;i<listaDeIdades.Tamanho;i++)
+            {
+                int idade = (int)listaDeIdades[i];
+                Console.WriteLine($"Idade no indice {i}: {idade}");
+            }
+
+
+            Console.WriteLine( SomarVarios(1, 3, 45, 76, 98, 097, 45, 43543, 342));
 
 
 

@@ -15,32 +15,48 @@ namespace ByteBank.SistemaAgencia
         {
             //------------------------------- CURSO DE ARRAY ---------------------------------------------------------//
 
+            Lista<int> idades = new Lista<int>();
 
 
+            idades.adicionar(5);
+            idades.AdicionarVarios(6, 3, 5, 7);
 
-            ListaDeObject listaDeIdades = new ListaDeObject();
-            listaDeIdades.adicionar(60);
-            listaDeIdades.adicionar(60);
-            listaDeIdades.adicionar(60);
-            listaDeIdades.AdicionarVarios(4, 98, 65);
-            listaDeIdades.adicionar(60);
 
-            for(int i=0;i<listaDeIdades.Tamanho;i++)
+            for(int i = 0; i < idades.Tamanho;i++)
             {
-                int idade = (int)listaDeIdades[i];
-                Console.WriteLine($"Idade no indice {i}: {idade}");
+                int iddadeAtua = idades[i];
             }
 
-
-            Console.WriteLine( SomarVarios(1, 3, 45, 76, 98, 097, 45, 43543, 342));
+            Console.WriteLine(SomarVarios(1, 3, 45, 76, 98, 097, 45, 43543, 342));
 
 
 
 
             Console.ReadLine();
+        }
+
+             static void testaListaDeObject()
+            {
+                ListaDeObject listaDeIdades = new ListaDeObject();
+                listaDeIdades.adicionar(60);
+                listaDeIdades.adicionar(60);
+                listaDeIdades.adicionar(60);
+                listaDeIdades.AdicionarVarios(4, 98, 65);
+                listaDeIdades.adicionar(60);
+
+                for (int i = 0; i < listaDeIdades.Tamanho; i++)
+                {
+                    int idade = (int)listaDeIdades[i];
+                    Console.WriteLine($"Idade no indice {i}: {idade}");
+                }
+            }
 
 
-            //------------------------------- CURSO DE STRINGS ---------------------------------------------------------//
+        //------------------------------- CURSO DE STRINGS ---------------------------------------------------------//
+
+
+        static void testaStrings()
+        { 
             Cliente carlos_1 = new Cliente();
             carlos_1.Nome = "Carlos";
             carlos_1.CPF = "458.623.120-03";
@@ -337,3 +353,5 @@ namespace ByteBank.SistemaAgencia
 
     }
 }
+
+

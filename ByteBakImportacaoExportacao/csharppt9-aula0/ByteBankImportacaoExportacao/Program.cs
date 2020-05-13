@@ -8,35 +8,48 @@ using System.Threading.Tasks;
 
 namespace ByteBankImportacaoExportacao 
 { 
-    class Program 
-    { 
-        static void Main(string[] args) 
+    partial class Program 
+    {
+        static void Main(string[] args)
         {
 
-            var enderecoDoArquivo = "contas.txt";
 
-            var fluxoDoArquivo = new FileStream(enderecoDoArquivo, FileMode.Open);
 
-            var buffer = new byte[1024];// 1bk
-            var numeroDeBytesLidos = -1;
+            // CriarArquivoComWriter();
+            //CriarArquivo();
+            //EscritaBinaria();
 
-            while(numeroDeBytesLidos!=0)
+            // LeituraBinaria();
+
+            // TestaEscrita();
+
+            // UsarStreamDeEntrada();
+
+            Console.WriteLine("Digite seu nome"); //ler a entrada de usuario na console
+           var nome = Console.ReadLine();
+            Console.WriteLine(nome);
+
+            var linhas = File.ReadAllLines("contas.txt"); // ler todas as linhas do arquivo
+            Console.WriteLine(linhas.Length);
+            foreach(var linha in linhas)
             {
-                numeroDeBytesLidos=   fluxoDoArquivo.Read(buffer, 0, 1024);
-                EscreverBuffer(buffer);
+                Console.WriteLine(linha);
             }
-            
-            Console.ReadLine();
+            File.WriteAllText("escrevendoComAClasseFile.txt", "Testando File.WriteAllText");
+
+            Console.WriteLine("Arquivo escrevendoComAClasseFile criado!");
+
+            var bytesArquivo = File.ReadAllBytes("contas.txt");
+            Console.WriteLine($"Arquivo contas.txt possui {bytesArquivo.Length} bytes");
+
+
+
+            Console.WriteLine("Criou o arquivo MLK doido");
+                Console.ReadLine();
+
+           
         }
 
-        static void EscreverBuffer( byte[] buffer)
-        {
-            foreach(var meuByte in buffer)
-            {
-                Console.Write(meuByte);
-                Console.Write("");
-            }
-        }
     }
 } 
  

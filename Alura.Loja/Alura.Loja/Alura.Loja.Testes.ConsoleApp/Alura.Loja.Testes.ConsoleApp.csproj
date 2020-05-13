@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E5923D65-D667-4DDC-978A-870C9D44E580}</ProjectGuid>
+    <ProjectGuid>{D59A32D0-B933-45D7-8922-483BF3C08524}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ByteBankImportacaoExportacao</RootNamespace>
-    <AssemblyName>ByteBankImportacaoExportacao</AssemblyName>
+    <RootNamespace>Alura.Loja.Testes.ConsoleApp</RootNamespace>
+    <AssemblyName>Alura.Loja.Testes.ConsoleApp</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,20 +42,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="3_CriandoArquivo.cs" />
-    <Compile Include="4_StreamBinario.cs" />
-    <Compile Include="5_UsandoStreamDeEntradaDaConsole.cs" />
-    <Compile Include="Botao.cs" />
-    <Compile Include="2_UsandoStreamReader.cs" />
-    <Compile Include="Cores.cs" />
-    <Compile Include="1_LidandoComStreamDiretamente.cs" />
-    <Compile Include="Modelos\Cliente.cs" />
-    <Compile Include="Modelos\ContaCorrente.cs" />
+    <Compile Include="Produto.cs" />
+    <Compile Include="ProdutoDAO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ddl-produtos.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

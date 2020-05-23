@@ -14,8 +14,8 @@ namespace Alura.Loja.Testes.ConsoleApp
     {
         static void Main(string[] args)
         {
-            
-            
+
+            Console.WriteLine("AAAAAAAAAAAALLLLLLLLLLLLLLLOOOOOOOOOOOOOO");
 
         }
 

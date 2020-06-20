@@ -12,7 +12,7 @@ namespace Alura.Loja.Testes.ConsoleApp
 {
     partial class Aula_Estados_Entity_FrameWork
     {
-        static void Main(string[] args)
+        public static void GerenciamentoDeEstadoEntityFrameWork()
         {
             using (var contexto = new LojaContext())
             {
@@ -30,7 +30,8 @@ namespace Alura.Loja.Testes.ConsoleApp
                 {
                     Nome = "sabão em pó",
                     Categoria = "Limpeza",
-                    Preco = 5.00
+                    PrecoUnitario
+                    = 5.00
 
                 };
 

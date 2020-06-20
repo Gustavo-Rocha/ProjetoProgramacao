@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Alura.ListaLeitura.App": {
+      "commandName": "Project",
+      "workingDirectory": "C:\\Dev\\ProjetoProgramacao\\Alura.ListaLeitura\\Alura.ListaLeitura.App"
+    }
+  }
+}

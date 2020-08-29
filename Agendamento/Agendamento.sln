@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Agendamento", "Agendamento.csproj", "{EA4FDD42-7A6A-4308-82F3-2134B55418EE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EA4FDD42-7A6A-4308-82F3-2134B55418EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA4FDD42-7A6A-4308-82F3-2134B55418EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA4FDD42-7A6A-4308-82F3-2134B55418EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA4FDD42-7A6A-4308-82F3-2134B55418EE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3BEC03C4-6743-4EA4-901D-F51971EF428C}
+	EndGlobalSection
+EndGlobal
